@@ -27,13 +27,8 @@ const predictRisk = (inputData) => {
         return reject("ML execution failed");
       }
 
-      try {
-        const result = JSON.parse(output.trim());
-        resolve(result);
-      } catch (err) {
-        console.error("Invalid ML response:", output);
-        reject("Invalid ML response");
-      }
+      resolve(output.trim());
+
     });
   });
 };
