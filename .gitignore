@@ -1,0 +1,10 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Optional (ML model if you don't want to push it)
+# *.pkl
+
+# Node (backend safety)
+node_modules/
+.env
