@@ -1,7 +1,16 @@
+import warnings
+
+# Ignore version mismatch warnings from scikit-learn
+warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
+
+import os
 import joblib
 import pandas as pd
+import sys
+import json
 
-model = joblib.load("pcod_model.pkl")
+model_path = os.path.join(os.path.dirname(__file__), "pcod_model.pkl")
+model = joblib.load(model_path)
 
 def predict_pcod(data):
     df = pd.DataFrame([data])
