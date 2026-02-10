@@ -65,22 +65,34 @@ const actionSteps = [
   {
     icon: Activity,
     title: "Move Your Body",
-    desc: "40-45 min of anaerobic exercise, 5 days/week. High-intensity workouts improve insulin sensitivity significantly.",
+    desc: `Regular exercise improves insulin sensitivity.
+- Low Risk: 30 min daily, mix of walking & light strength.
+- Medium Risk: 40–45 min, mix of strength and cardio.
+- High Risk: Start 20 min, build up with high-intensity intervals.`,
   },
   {
     icon: Heart,
     title: "Eat Mindfully",
-    desc: "Focus on high-fiber, protein-rich foods. Avoid processed sugar and junk food. Include anti-inflammatory spices.",
+    desc: `Diet helps balance hormones.
+- Low Risk: Balanced diet with fruits, vegetables, whole grains.
+- Medium Risk: Increase fiber & protein, reduce processed foods.
+- High Risk: Strict anti-inflammatory, low-GI foods; avoid sugar & junk food.`,
   },
   {
     icon: Zap,
     title: "Manage Stress",
-    desc: "Chronic stress raises cortisol, worsening insulin resistance. Practice yoga, meditation, or deep breathing.",
+    desc: `Stress impacts insulin & hormones.
+- Low Risk: Relaxation exercises 2–3 times/week.
+- Medium Risk: Daily meditation or yoga.
+- High Risk: Prioritize stress management, deep breathing, and therapy if needed.`,
   },
   {
     icon: BookOpen,
     title: "Stay Informed",
-    desc: "Understand your body. Track your cycle, monitor symptoms, and consult a doctor if symptoms persist for 4-6 months.",
+    desc: `Knowledge is power.
+- Low Risk: Track your cycle occasionally.
+- Medium Risk: Note symptoms & lifestyle effects.
+- High Risk: Keep detailed records, consult a doctor if symptoms persist.`,
   },
 ]
 
@@ -89,7 +101,7 @@ export default function AwarenessPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">
-        {/* Hero */}
+        {/* Hero Section */}
         <section className="bg-background px-6 py-16 lg:py-24">
           <div className="mx-auto max-w-4xl text-center">
             <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground">
@@ -97,18 +109,16 @@ export default function AwarenessPage() {
               Health Awareness
             </div>
             <h1 className="mb-4 text-balance text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-              Understanding{" "}
-              <span className="text-primary">Insulin Resistance</span>{" "}
-              & PCOD
+              Understanding <span className="text-primary">Insulin Resistance</span> & PCOD
             </h1>
             <p className="mx-auto max-w-2xl text-pretty leading-relaxed text-muted-foreground">
               Insulin Resistance is widely recognized as the root cause of PCOD. When your cells become resistant to insulin, 
-              it triggers a chain reaction of hormonal imbalances that lead to the symptoms we associate with Polycystic Ovarian Disorder.
+              it triggers a chain reaction of hormonal imbalances that lead to the symptoms associated with Polycystic Ovarian Disorder.
             </p>
           </div>
         </section>
 
-        {/* How IR leads to PCOD */}
+        {/* Insulin Resistance Stages */}
         <section className="border-y border-border bg-card px-6 py-16">
           <div className="mx-auto max-w-5xl">
             <div className="mb-10 text-center">
@@ -177,7 +187,7 @@ export default function AwarenessPage() {
           </div>
         </section>
 
-        {/* Action steps */}
+        {/* Action Steps */}
         <section className="border-t border-border bg-card px-6 py-16">
           <div className="mx-auto max-w-5xl">
             <div className="mb-10 text-center">
@@ -195,7 +205,7 @@ export default function AwarenessPage() {
                     <step.icon className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="mb-2 text-base font-semibold text-foreground">{step.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                  <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">{step.desc}</p>
                 </div>
               ))}
             </div>
