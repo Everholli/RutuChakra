@@ -1,11 +1,16 @@
+import os
 import pandas as pd
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-# Load dataset
-df = pd.read_csv("data/pcod_dataset.csv")
+BASE_DIR = os.path.dirname(__file__)
+DATA_PATH = os.path.join(BASE_DIR, "data", "pcod_dataset.csv")
+MODEL_PATH = os.path.join(BASE_DIR, "pcod_model.pkl")
+
+# Load dataset (path is now robust to current working directory)
+df = pd.read_csv(DATA_PATH)
 
 # ----------------------------
 # CLEAN DATA
@@ -99,6 +104,6 @@ print("Model Accuracy:", round(accuracy, 2))
 # SAVE MODEL
 # ----------------------------
 
-joblib.dump(model, "pcod_model.pkl")
+joblib.dump(model, MODEL_PATH)
 
-print("pcod_model.pkl saved successfully")
+print("pcod_model.pkl saved successfully at:", MODEL_PATH)
